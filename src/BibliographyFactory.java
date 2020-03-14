@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.Scanner;
 
 public class BibliographyFactory {
-
+    //TESTING?
     public static void main(String[] args) {
 
         String[] OriginalFileNames = {"src/Latex1.bib", "src/Latex2.bib", "src/Latex3.bib", "src/Latex4.bib"};
