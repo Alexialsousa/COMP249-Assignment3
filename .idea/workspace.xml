@@ -2,9 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40af671a-50e8-4d5b-b614-8821cdd253f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ACM1.json" beforeDir="false" afterPath="$PROJECT_DIR$/ACM1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ACM2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ACM3.json" beforeDir="false" afterPath="$PROJECT_DIR$/ACM3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ACM4.json" beforeDir="false" afterPath="$PROJECT_DIR$/ACM4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IEEE1.json" beforeDir="false" afterPath="$PROJECT_DIR$/IEEE1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IEEE2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IEEE3.json" beforeDir="false" afterPath="$PROJECT_DIR$/IEEE3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IEEE4.json" beforeDir="false" afterPath="$PROJECT_DIR$/IEEE4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NJ1.json" beforeDir="false" afterPath="$PROJECT_DIR$/NJ1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NJ2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NJ3.json" beforeDir="false" afterPath="$PROJECT_DIR$/NJ3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NJ4.json" beforeDir="false" afterPath="$PROJECT_DIR$/NJ4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 3/BibliographyFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 3/BibliographyFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 3/Latex1.bib" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 3/Latex1.bib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BibliographyFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BibliographyFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Latex1.bib" beforeDir="false" afterPath="$PROJECT_DIR$/src/Latex1.bib" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,6 +99,8 @@
       <workItem from="1584069233646" duration="10087000" />
       <workItem from="1584135152807" duration="1329000" />
       <workItem from="1584218845866" duration="50000" />
+      <workItem from="1584643289972" duration="16043000" />
+      <workItem from="1584740362475" duration="14605000" />
     </task>
     <servers />
   </component>
@@ -96,7 +112,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
