@@ -7,6 +7,8 @@ March 30th 2020
 This program acts as a basic bibliography generator. It takes input files with information on multiple
 articles and creates three different file types for each input file. These types are IEE, NJ and ACM
 format files. This is an efficient way to create and store literary sources.
+
+Note: Change the name of the file in the OriginalFileNames array to open custom file
  */
 
 
@@ -130,7 +132,7 @@ public class BibliographyFactory {
         // calling the method to write and process all files
         processFilesForValidation();
 
-        //asking user for file input
+        //asking user for file input until file is found or tries limit is reached
         while (!found) {
             try {
                 System.out.println("Please enter the name of the file that you need to review: ");
@@ -154,7 +156,7 @@ public class BibliographyFactory {
                 // throws exception if not found
                 if (!found) {
                     throw new FileNotFoundException("Could not open input file. File does not exist or possibly could not have been created!\nHowever, you have another chance to enter another file name.");
-                } else {
+                } else {// buffered reader reads every line of found file
                     BufferedReader reader = null;
                     reader = new BufferedReader(new FileReader(file_input));
                     String line;
@@ -166,22 +168,26 @@ public class BibliographyFactory {
                 }
             } catch (FileNotFoundException e) {
                 if (tries == 1) {
-                    System.out.println(e.getMessage());
+                    System.out.println(e.getMessage()); // tells user file was not found
                 }
-                // if max tries is reached, program will exit
+                // tells user max tries was reached and program will exit
                 if (tries == 2) {
                     System.out.println("Could not open input file again! Either file does not exist or could not be created. Sorry, I am not able to display your desired file. Program will exit!");
                     System.exit(0);
                 }
                 tries++;
             } catch (IOException e) {
-                System.out.println(e);
+                System.out.println(e.getMessage());
             }
         }
 
         keyboard.close();
     }
 
+    /**
+     * this method processes all input files and created the corresponding 30 files with their respectful
+     * content. This method also takes in no parameters as it uses the files already opened in the previous method
+     */
     public static void processFilesForValidation() {
         String line;
         String journal = "journal 1";
@@ -200,6 +206,7 @@ public class BibliographyFactory {
         int j;
         int invalids = 0;
 
+        // Creates files for as many input files as OriginalFileNames length
         for (int i = 0; i < OriginalFileNames.length; i++) {
             try {
                 j = 0;
@@ -222,17 +229,19 @@ public class BibliographyFactory {
 
                             // verifying if line has a field
                             if (index != -1) {
+                                // storing field and content substrings into variables
                                 String field = nextLine.substring(0, index);
                                 String content = nextLine.substring(index + 2, nextLine.indexOf("}"));
 
-                                //verifying if field is empty
+                                //throws FileInvalidException exception if content is empty
                                 if (content.isBlank()) {
                                     throw new FileInvalidException("ERROR\n=============================================\nProblem detected with input file: " + OriginalFileNames[i] + "\nFile is invalid: Field " + field + " is empty. Processing has stopped although other empty field might still be present!\n=============================================");
                                 }
 
-                                // assigning the contents to its field
+                                // assigning the contents to its respectful field
                                 switch (field) {
                                     case "author":
+                                        // storing the separated author content in an array of author names
                                         authorStringArray = content.split(" and");
 
                                         //IEEE
@@ -287,14 +296,18 @@ public class BibliographyFactory {
                             nextLine = scanners[i].nextLine();
                         } // article is finished
 
+                        // storing specific order of output in a string
                         String IEEEOutput = IEEE_Author + ". \"" + title + " \", " + journal + ", vol. " + volume + ", no. " + number + ", p. " + pages + ", " + month + " " + year + ".";
+                        // writing output to every file
                         IEEEWriters[i].printf(IEEEOutput);
                         IEEEWriters[i].printf("\n");
                         IEEEWriters[i].flush();
+
                         String ACMOutput = "[" + j + "] " + ACM_Author + " et al. " + year + ". " + title + ". " + journal + ". " + volume + ", " + number + " (" + year + ")," + pages + ". DOI:https://doi.org/" + doi + ".";
                         ACMWriters[i].printf(ACMOutput);
                         ACMWriters[i].printf("\n");
                         ACMWriters[i].flush();
+
                         String NJOutput = NJ_Author + ". " + title + ". " + journal + ". " + volume + ", " + pages + "(" + year + ").";
                         NJWriters[i].printf(NJOutput);
                         NJWriters[i].printf("\n");
